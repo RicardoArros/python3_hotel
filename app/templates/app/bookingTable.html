@@ -1,0 +1,52 @@
+{% extends "app/base.html" %} 
+
+{% block title %} Listar Reservas - Sistema de Reservas Hotel Villarica {% endblock %} 
+
+{% block body %} 
+
+{% load humanize %}
+
+<div class="container">
+  <!-- Title -->
+  <div class="row">
+    <div class="col">
+      <div class="view__title">
+        <h1>Listar reservas</h1>
+      </div>
+    </div>
+  </div>
+
+  <!-- Form -->
+  <div class="row">
+    <div class="col">
+      <div class="">
+        <table class="table table-hover table-responsive-sm">
+          <thead>
+            <tr>
+              <th>ID reserva</th>
+              <th>Fecha reserva</th>
+              <th>Nº habitación</th>
+              <!-- <th>Rut Huesped</th> -->
+              <!-- <th>Acciones</th> -->
+            </tr>
+          </thead>
+
+          <tbody>
+            {% for r in reservas %}
+
+              <tr>
+                <td scope="row">{{r.id}}</td>
+                <td>{{r.fecha_reserva}}</td>
+                <td>{{r.nro_habitacion}}</td>                
+              </tr>
+
+            {% endfor %}
+            
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

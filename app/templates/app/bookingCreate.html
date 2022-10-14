@@ -1,0 +1,40 @@
+{% extends "app/base.html" %}
+
+{% block title %} Ingresar Reservas -  Sistema de Reservas Hotel Villarica {% endblock %}
+
+{% block body %}
+
+{% load crispy_forms_tags %}
+
+
+<h1>Ingresar Reservas</h1>
+
+<form enctype="multipart/form-data" action="" class="form__create mb-4" method="post">
+  {% csrf_token %} 
+
+  <div class="my-4">{{form1 | crispy}} {{form2 | crispy}}</div>  
+
+  <div class="mt-5">
+    <button name="" id="" class="btn btn-success" type="submit">
+      Ingresar Reserva
+    </button>
+
+    <a
+      name=""
+      id=""
+      class="btn btn-primary"
+      href="{% url 'home' %}"
+      role="button"
+    >
+      Cancelar
+    </a>
+  </div>
+</form>
+
+<div >
+  <p class="form__msg-success" >{{mensaje}}</p>
+
+</div>
+
+
+{% endblock %}

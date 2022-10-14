@@ -1,0 +1,17 @@
+/*  */
+
+
+/*  */
+.navbar {
+  background-color: lightgray;
+}
+
+nav a img.logo {
+  width: 70px;
+}
+
+/*  */
+.form__msg-success {
+  font-size: 1.5rem;
+  color: rgb(18, 172, 18);
+}

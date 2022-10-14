@@ -1,0 +1,31 @@
+{% extends "app/base.html" %} 
+
+{% block title %} Pagina de respuesta {% endblock %}
+
+{% block body %}
+
+<div class="container">
+  <!-- Title -->
+  <div class="row">
+    <div class="col">
+      <div class="view__title">
+        <h1>Esta es la página de respuesta</h1>
+      </div>
+    </div>
+  </div>
+
+  <!-- Data -->
+  <div class="row">
+    <div class="col">
+      <p>Se recibieron los siguientes datos:</p>
+
+      <ul>        
+        <li>ID Reserva: {{id}}</li>
+        <li>Fecha de Reserva: {{fecha_reserva}}</li>
+        <li>Nª de habitación{{nro_habitacion}}</li>       
+      </ul>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
