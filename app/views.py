@@ -18,7 +18,7 @@ def bookingCreate(request):
   data = {
     'form1': ReservasFormCreate(),
     'form2': HuespedesFormCreate()
-  }  
+  } 
     
   if request.method == 'POST':
     form1 = ReservasFormCreate(data = request.POST)
@@ -38,18 +38,19 @@ def bookingCreate(request):
 
 
 #
-def bookingResponse(request):
-  reservas = Reservas.objects.all()
+def bookingResponse(request):      
+  identificador = request.POST['id']
+  fechaReserva = request.POST['fecha_reserva']
+  nHabitacion = request.POST['nro_habitacion']
   
-  data = {
-    'reservas': reservas
-  }
+  # args = {
+  #   'id': identificador,
+  #   'fecha_reserva': fechaReserva    
+  # }
   
-  print(data)
+  reservation = Reservas.objects.create(id=identificador, fecha_reserva=fechaReserva, nro_habitacion=nHabitacion)  
   
-  
-  return render(request, 'app/bookingCreateResponse.html', data)
-
+  return render(request, 'app/bookingCreateResponse.html', {'r': reservation})
 
 #
 def bookingUpdate(request):
